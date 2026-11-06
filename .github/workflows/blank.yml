@@ -11,9 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Run a one-line script
-        run: echo Hello, world!
-      - name: Run a multi-line script
+      - name: Terraform plan and apply
+        run: echo Terraform plan and apply
+      - name: Create VPC and VM or services needed for sandbox
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          echo Create VPC and VM or services needed for sandbox
+      - name: Start Timer for 10 Sec
+        run: sleep 10
+      - name: after timer ends terraform destroys sandbox
+        run: echo terraform destroy
+      
